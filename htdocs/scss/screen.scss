@@ -1,0 +1,64 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+
+
+
+// Sprite Generation via Compass
+
+$test-icons-spacing: 20px;
+$test-icons-dimensions: true;
+@import "test-icons/*.png";
+@include all-test-icons-sprites;
+
+
+body {
+	font-family: sans-serif;
+	margin: 2em auto;
+	width: 95%;
+}
+
+h1 {
+	color: #222;
+	font: {
+		size: 2em;
+		weight: bold;
+	}
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+ul {
+	background-color: #222;
+	overflow: hidden;
+
+	li {
+		float: left;
+
+		a {
+			color: #dfdfdf;
+			display: block;
+			font-weight: bold;
+			padding: 0.5em 0.5em 0.5em 35px;
+			position: relative;;
+			text: {
+				decoration: none;
+				transform: uppercase;
+			}
+
+			&:hover {
+				color: #F90;
+			}
+
+			&.news { @extend .test-icons-newspaper; }
+			&.comment { @extend .test-icons-comment; }
+			&.touch { @extend .test-icons-telephone; }
+			&.print { @extend .test-icons-printer; }
+			&.buy { @extend .test-icons-shoppingcart; }
+		}
+	}
+}

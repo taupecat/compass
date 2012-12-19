@@ -1,0 +1,125 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+.test-icons-sprite, .test-icons-comment, ul li a.comment, .test-icons-newspaper, ul li a.news, .test-icons-pencil, .test-icons-person, .test-icons-printer, ul li a.print, .test-icons-shoppingcart, ul li a.buy, .test-icons-telephone, ul li a.touch {
+  background: url('/images/test-icons-s72e9e98188.png') no-repeat;
+}
+
+.test-icons-comment, ul li a.comment {
+  background-position: 0 -264px;
+}
+
+.test-icons-newspaper, ul li a.news {
+  background-position: 0 -179px;
+}
+
+.test-icons-pencil {
+  background-position: 0 -91px;
+}
+
+.test-icons-person {
+  background-position: 0 -221px;
+}
+
+.test-icons-printer, ul li a.print {
+  background-position: 0 -132px;
+}
+
+.test-icons-shoppingcart, ul li a.buy {
+  background-position: 0 0;
+}
+
+.test-icons-telephone, ul li a.touch {
+  background-position: 0 -46px;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 2em auto;
+  width: 95%;
+}
+
+h1 {
+  color: #222;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+ul {
+  background-color: #222;
+  overflow: hidden;
+}
+ul li {
+  float: left;
+}
+ul li a {
+  color: #dfdfdf;
+  display: block;
+  font-weight: bold;
+  padding: 0.5em 0.5em 0.5em 35px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+ul li a:hover {
+  color: #F90;
+}
