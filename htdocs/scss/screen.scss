@@ -10,11 +10,13 @@
 
 // Sprite Generation via Compass
 
-$test-icons-spacing: 20px;
-$test-icons-dimensions: true;
-@import "test-icons/*.png";
-@include all-test-icons-sprites;
+/*
+$test-icons-sprite-dimensions: true;
+*/
 
+$nav-icons-spacing: 20px;
+@import "nav-icons/*.png";
+@include all-nav-icons-sprites;
 
 body {
 	font-family: sans-serif;
@@ -35,6 +37,7 @@ h1 {
 ul {
 	background-color: #222;
 	overflow: hidden;
+	padding: 0 5px;
 
 	li {
 		float: left;
@@ -43,8 +46,9 @@ ul {
 			color: #dfdfdf;
 			display: block;
 			font-weight: bold;
+			margin-right: 15px;
 			padding: 0.5em 0.5em 0.5em 35px;
-			position: relative;;
+			position: relative;
 			text: {
 				decoration: none;
 				transform: uppercase;
@@ -54,11 +58,22 @@ ul {
 				color: #F90;
 			}
 
-			&.news { @extend .test-icons-newspaper; }
-			&.comment { @extend .test-icons-comment; }
-			&.touch { @extend .test-icons-telephone; }
-			&.print { @extend .test-icons-printer; }
-			&.buy { @extend .test-icons-shoppingcart; }
+			&.news {
+				@extend .nav-icons-newspaper;
+				@include sprite-background-position($nav-icons-sprites, newspaper, 0, 4px);
+			}
+			&.comment {
+				@extend .nav-icons-comment;
+				@include sprite-background-position($nav-icons-sprites, comment, 0, 4px);
+			}
+			&.touch {
+				@extend .nav-icons-telephone;
+				@include sprite-background-position($nav-icons-sprites, telephone, 0, 3px);
+			}
+			&.buy {
+				@extend .nav-icons-shoppingcart;
+				@include sprite-background-position($nav-icons-sprites, shoppingcart, 0, 3px);
+			}
 		}
 	}
 }
