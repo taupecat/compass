@@ -62,15 +62,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 $test-icons-sprite-dimensions: true;
 */
 .nav-icons-sprite, .nav-icons-comment, ul li a.comment, .nav-icons-newspaper, ul li a.news, .nav-icons-shoppingcart, ul li a.buy, .nav-icons-telephone, ul li a.touch {
-  background: url('/images/nav-icons-s58cf3f6c60.png') no-repeat;
+  background: url('/images/nav-icons-sd7ce5747c3.png') no-repeat;
 }
 
 .nav-icons-comment, ul li a.comment {
-  background-position: 0 -133px;
+  background-position: 0 -131px;
 }
 
 .nav-icons-newspaper, ul li a.news {
-  background-position: 0 -91px;
+  background-position: 0 -90px;
 }
 
 .nav-icons-shoppingcart, ul li a.buy {
@@ -78,25 +78,17 @@ $test-icons-sprite-dimensions: true;
 }
 
 .nav-icons-telephone, ul li a.touch {
-  background-position: 0 -46px;
+  background-position: 0 -45px;
 }
 
 body {
   font-family: sans-serif;
   margin: 2em auto;
-  width: 95%;
-}
-
-h1 {
-  color: #222;
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
+  width: 75%;
 }
 
 ul {
-  background-color: #222;
+  background-color: #dfdfdf;
   overflow: hidden;
   padding: 0 5px;
 }
@@ -104,7 +96,7 @@ ul li {
   float: left;
 }
 ul li a {
-  color: #dfdfdf;
+  color: #222;
   display: block;
   font-weight: bold;
   margin-right: 15px;
@@ -113,18 +105,15 @@ ul li a {
   text-decoration: none;
   text-transform: uppercase;
 }
-ul li a:hover {
-  color: #F90;
-}
 ul li a.news {
-  background-position: 0 -87px;
+  background-position: 0 -86px;
 }
 ul li a.comment {
-  background-position: 0 -129px;
+  background-position: 0 -127px;
 }
 ul li a.touch {
-  background-position: 0 -43px;
+  background-position: 0 -42px;
 }
 ul li a.buy {
-  background-position: 0 3px;
+  background-position: 0 4px;
 }
