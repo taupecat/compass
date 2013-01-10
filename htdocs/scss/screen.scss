@@ -1,65 +1,160 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* Reset everything, Gangnam style, er, I mean Eric Meyer style */
 
 @import "compass/reset";
 
 
 
 
-// Sprite Generation via Compass
-
 /*
-$test-icons-sprite-dimensions: true;
+The Ecstasy and Agony of Compass Sprites, Part 1
+Creating icons for a horizontal top nav bar
 */
 
 $nav-icons-spacing: 20px;
 @import "nav-icons/*.png";
 @include all-nav-icons-sprites;
 
-body {
-	font-family: sans-serif;
-	margin: 2em auto;
-	width: 75%;
+nav {
+	ul {
+		background-color: #dfdfdf;
+		overflow: hidden;
+		padding: 0 5px;
+
+		li {
+			float: left;
+
+			a {
+				color: #222;
+				display: block;
+				font-weight: bold;
+				margin-right: 15px;
+				padding: 0.5em 0.5em 0.5em 35px;
+				position: relative;
+				text: {
+					decoration: none;
+					transform: uppercase;
+				}
+
+				&.news {
+					@extend .nav-icons-newspaper;
+					@include sprite-background-position($nav-icons-sprites, newspaper, 0, 4px);
+				}
+				&.comment {
+					@extend .nav-icons-comment;
+					@include sprite-background-position($nav-icons-sprites, comment, 0, 4px);
+				}
+				&.touch {
+					@extend .nav-icons-telephone;
+					@include sprite-background-position($nav-icons-sprites, telephone, 0, 3px);
+				}
+				&.buy {
+					@extend .nav-icons-shoppingcart;
+					@include sprite-background-position($nav-icons-sprites, shoppingcart, 0, 4px);
+				}
+			}
+		}
+	}
 }
 
-ul {
-	background-color: #dfdfdf;
-	overflow: hidden;
-	padding: 0 5px;
+
+
+/*
+The Ecstasy and Agony of Compass Sprites, Part 2
+Creating icons for a social media extravaganza footer
+*/
+
+$social-icons: sprite-map("social-icons/*.png");
+$social-icons-hidpi: sprite-map("social-icons-hidpi/*.png");
+
+footer {
+	margin-bottom: 200px;
 
 	li {
 		float: left;
 
 		a {
-			color: #222;
-			display: block;
-			font-weight: bold;
+			@extend %ir;
 			margin-right: 15px;
-			padding: 0.5em 0.5em 0.5em 35px;
-			position: relative;
-			text: {
-				decoration: none;
-				transform: uppercase;
+			background: $social-icons no-repeat;
+			@include sprite-dimensions($social-icons, twitter);
+
+			&.twitter {
+				background-position: sprite-position($social-icons, twitter);
 			}
 
-			&.news {
-				@extend .nav-icons-newspaper;
-				@include sprite-background-position($nav-icons-sprites, newspaper, 0, 4px);
+			&.facebook {
+				background-position: sprite-position($social-icons, facebook);
 			}
-			&.comment {
-				@extend .nav-icons-comment;
-				@include sprite-background-position($nav-icons-sprites, comment, 0, 4px);
+
+			&.linkedin {
+				background-position: sprite-position($social-icons, linkedin);
 			}
-			&.touch {
-				@extend .nav-icons-telephone;
-				@include sprite-background-position($nav-icons-sprites, telephone, 0, 3px);
+
+			&.googleplus {
+				background-position: sprite-position($social-icons, googleplus);
 			}
-			&.buy {
-				@extend .nav-icons-shoppingcart;
-				@include sprite-background-position($nav-icons-sprites, shoppingcart, 0, 4px);
+
+			&.pinterest {
+				background-position: sprite-position($social-icons, pinterest);
+			}
+
+			@media only all and (-webkit-min-device-pixel-ratio: 1.5),
+				only all and (min--moz-device-pixel-ratio: 1.5),
+				only all and (-o-min-device-pixel-ratio: 3/2),
+				only all and (min-device-pixel-ratio: 1.5),
+				only all and (min-resolution: 144dpi),
+				only all and (min-resolution: 1.5dppx) {
+
+				background-image: sprite-url($social-icons-hidpi);
+				background-size: 32px auto;
+
+				&.twitter {
+					background-position: 0 round(nth(sprite-position($social-icons-hidpi, twitter), 2) / 2);
+				}
+
+				&.facebook {
+					background-position: 0 round(nth(sprite-position($social-icons-hidpi, facebook), 2) / 2);
+				}
+
+				&.linkedin {
+					background-position: 0 round(nth(sprite-position($social-icons-hidpi, linkedin), 2) / 2);
+				}
+
+				&.googleplus {
+					background-position: 0 round(nth(sprite-position($social-icons-hidpi, googleplus), 2) / 2);
+				}
+
+				&.pinterest {
+					background-position: 0 round(nth(sprite-position($social-icons-hidpi, pinterest), 2) / 2);
+				}
 			}
 		}
 	}
+}
+
+
+/* Other things, not germane to the tutorials. */
+
+body {
+	font-family: sans-serif;
+	margin: 2em auto;
+	max-width: 1024px;
+	width: 75%;
+}
+
+article[rel="main"] {
+	margin: 0 0 2em;
+	width: 100%;
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+%ir {
+	display: block;
+	overflow: hidden;
+	text-indent: 102%;
+	white-space: nowrap;
 }

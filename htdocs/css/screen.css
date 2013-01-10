@@ -1,7 +1,4 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* Reset everything, Gangnam style, er, I mean Eric Meyer style */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,43 +56,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /*
-$test-icons-sprite-dimensions: true;
+The Ecstasy and Agony of Compass Sprites, Part 1
+Creating icons for a horizontal top nav bar
 */
-.nav-icons-sprite, .nav-icons-comment, ul li a.comment, .nav-icons-newspaper, ul li a.news, .nav-icons-shoppingcart, ul li a.buy, .nav-icons-telephone, ul li a.touch {
+.nav-icons-sprite, .nav-icons-comment, nav ul li a.comment, .nav-icons-newspaper, nav ul li a.news, .nav-icons-shoppingcart, nav ul li a.buy, .nav-icons-telephone, nav ul li a.touch {
   background: url('/images/nav-icons-sd7ce5747c3.png') no-repeat;
 }
 
-.nav-icons-comment, ul li a.comment {
+.nav-icons-comment, nav ul li a.comment {
   background-position: 0 -131px;
 }
 
-.nav-icons-newspaper, ul li a.news {
+.nav-icons-newspaper, nav ul li a.news {
   background-position: 0 -90px;
 }
 
-.nav-icons-shoppingcart, ul li a.buy {
+.nav-icons-shoppingcart, nav ul li a.buy {
   background-position: 0 0;
 }
 
-.nav-icons-telephone, ul li a.touch {
+.nav-icons-telephone, nav ul li a.touch {
   background-position: 0 -45px;
 }
 
-body {
-  font-family: sans-serif;
-  margin: 2em auto;
-  width: 75%;
-}
-
-ul {
+nav ul {
   background-color: #dfdfdf;
   overflow: hidden;
   padding: 0 5px;
 }
-ul li {
+nav ul li {
   float: left;
 }
-ul li a {
+nav ul li a {
   color: #222;
   display: block;
   font-weight: bold;
@@ -105,15 +97,92 @@ ul li a {
   text-decoration: none;
   text-transform: uppercase;
 }
-ul li a.news {
+nav ul li a.news {
   background-position: 0 -86px;
 }
-ul li a.comment {
+nav ul li a.comment {
   background-position: 0 -127px;
 }
-ul li a.touch {
+nav ul li a.touch {
   background-position: 0 -42px;
 }
-ul li a.buy {
+nav ul li a.buy {
   background-position: 0 4px;
+}
+
+/*
+The Ecstasy and Agony of Compass Sprites, Part 2
+Creating icons for a social media extravaganza footer
+*/
+footer {
+  margin-bottom: 200px;
+}
+footer li {
+  float: left;
+}
+footer li a {
+  margin-right: 15px;
+  background: url('/images/social-icons-s79715d744c.png') no-repeat;
+  height: 32px;
+  width: 32px;
+}
+footer li a.twitter {
+  background-position: 0 -64px;
+}
+footer li a.facebook {
+  background-position: 0 -128px;
+}
+footer li a.linkedin {
+  background-position: 0 -96px;
+}
+footer li a.googleplus {
+  background-position: 0 -32px;
+}
+footer li a.pinterest {
+  background-position: 0 0;
+}
+@media only all and (-webkit-min-device-pixel-ratio: 1.5), only all and (min--moz-device-pixel-ratio: 1.5), only all and (-o-min-device-pixel-ratio: 3 / 2), only all and (min-device-pixel-ratio: 1.5), only all and (min-resolution: 144dpi), only all and (min-resolution: 1.5dppx) {
+  footer li a {
+    background-image: url('/images/social-icons-hidpi-sb5faf7fdff.png');
+    background-size: 32px auto;
+  }
+  footer li a.twitter {
+    background-position: 0 0;
+  }
+  footer li a.facebook {
+    background-position: 0 -64px;
+  }
+  footer li a.linkedin {
+    background-position: 0 -96px;
+  }
+  footer li a.googleplus {
+    background-position: 0 -128px;
+  }
+  footer li a.pinterest {
+    background-position: 0 -32px;
+  }
+}
+
+/* Other things, not germane to the tutorials. */
+body {
+  font-family: sans-serif;
+  margin: 2em auto;
+  max-width: 1024px;
+  width: 75%;
+}
+
+article[rel="main"] {
+  margin: 0 0 2em;
+  width: 100%;
+}
+article[rel="main"] img {
+  height: auto;
+  max-width: 100%;
+}
+
+footer li a {
+  display: block;
+  overflow: hidden;
+  text-indent: 102%;
+  white-space: nowrap;
 }
