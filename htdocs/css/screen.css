@@ -115,7 +115,8 @@ The Ecstasy and Agony of Compass Sprites, Part 2
 Creating icons for a social media extravaganza footer
 */
 footer {
-  margin-bottom: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 footer li {
   float: left;
@@ -178,6 +179,9 @@ article[rel="main"] {
 article[rel="main"] img {
   height: auto;
   max-width: 100%;
+}
+article[rel="main"] p {
+  margin: 0.5em 0;
 }
 
 footer li a {

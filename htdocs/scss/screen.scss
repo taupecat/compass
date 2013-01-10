@@ -67,7 +67,8 @@ $social-icons: sprite-map("social-icons/*.png");
 $social-icons-hidpi: sprite-map("social-icons-hidpi/*.png");
 
 footer {
-	margin-bottom: 200px;
+	margin-bottom: 20px;
+	overflow: hidden;
 
 	li {
 		float: left;
@@ -149,6 +150,10 @@ article[rel="main"] {
 	img {
 		height: auto;
 		max-width: 100%;
+	}
+
+	p {
+		margin: 0.5em 0;
 	}
 }
 
